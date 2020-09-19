@@ -13,7 +13,7 @@ class SignInView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            QuotLogo(),
+            QuotLogo(logoSize: 70),
             CustomSizedBox(widNum: 0.0, heiNum: 0.26),
             SignInOptions()
           ],

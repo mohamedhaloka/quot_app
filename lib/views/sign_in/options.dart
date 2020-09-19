@@ -27,7 +27,7 @@ class SignInOptions extends StatelessWidget {
 
   Widget drawSignInOption(imgSrc) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: kPrimaryColor, width: 1)),
