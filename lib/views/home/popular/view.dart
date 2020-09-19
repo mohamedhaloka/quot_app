@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:quot_app/const.dart';
-import 'package:quot_app/widgets_ui/custom_sized_box.dart';
+import 'package:quot_app/views/home/popular/popular_card.dart';
 
 class PopularView extends StatelessWidget {
   @override
@@ -18,7 +17,7 @@ class PopularView extends StatelessWidget {
             duration: const Duration(milliseconds: 575),
             child: SlideAnimation(
               verticalOffset: 50.0,
-              child: ,
+              child: PopularCard(),
             ),
           );
         },
@@ -32,4 +31,3 @@ class PopularView extends StatelessWidget {
   }
 }
 
-/**/

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/home/app_bar.dart';
-import 'package:quot_app/views/home/pouplar_view.dart';
+import 'file:///C:/Users/laptop/AndroidStudioProjects/quot_app/lib/views/home/popular/view.dart';
 
 class HomeView extends StatefulWidget {
   static String id = "Home View";

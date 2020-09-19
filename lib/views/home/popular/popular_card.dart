@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
-import '../../const.dart';
+import '../../../const.dart';
 
 class PopularCard extends StatelessWidget {
   @override
