@@ -19,40 +19,59 @@ class AuthorCard extends StatelessWidget {
             ]),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "\"",
-                  style: TextStyle(fontSize: 30),
-                ),
-                Image.asset(
-                  "assets/img/home/bookmark.png",
-                  width: 20,
-                )
-              ],
+            Align(
+              alignment: Alignment.centerRight,
+              child: Image.asset(
+                "assets/img/home/bookmark.png",
+                width: 20,
+              ),
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.005),
             Expanded(
                 child: Center(
-                  child: Text(
-                    "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
-                    style: TextStyle(fontFamily: "Playfair"),
+              child: Column(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.black54, shape: BoxShape.circle),
                   ),
-                )),
-            CustomSizedBox(widNum: 0.0, heiNum: 0.01),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "- Mohamed Nasr",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontFamily: "Playfair",
-                      fontWeight: FontWeight.bold),
-                )),
+                  CustomSizedBox(widNum: 0.0, heiNum: 0.02),
+                  Text(
+                    "- Mohamed Nasr",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Playfair",
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            )),
             CustomSizedBox(widNum: 0.0, heiNum: 0.012),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    authorOption("like.png", () => print("like")),
+                    CustomSizedBox(widNum: 0.02, heiNum: 0.0),
+                    authorOption("dislike.png", () => print("dislike")),
+                  ],
+                ),
+                authorOption("share.png", () => print("share")),
+              ],
+            ),
           ],
+        ));
+  }
+
+  Widget authorOption(imgSrc, onPress) {
+    return GestureDetector(
+        onTap: onPress,
+        child: Image.asset(
+          "assets/img/home/" + imgSrc,
+          width: 16,
         ));
   }
 }

@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget {
           QuotLogo(
             logoSize: 0.075,
             isVisible: false,
-            contWidth: 0.32,
+            contWidth: 0.3,
             logoColor: Color(0xff33575A),
           ),
           Row(

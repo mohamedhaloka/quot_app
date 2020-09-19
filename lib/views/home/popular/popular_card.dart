@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
 import '../../../const.dart';
@@ -35,13 +36,20 @@ class PopularCard extends StatelessWidget {
               ],
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.005),
-            Expanded(
-                child: Center(
-              child: Text(
-                "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
-                style: TextStyle(fontFamily: "Playfair"),
-              ),
-            )),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, FullQuoteView.id);
+              },
+              child: Expanded(
+                  child: Center(
+                child: Text(
+                  "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontFamily: "Playfair"),
+                ),
+              )),
+            ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.01),
             Align(
                 alignment: Alignment.centerRight,
@@ -94,7 +102,7 @@ class PopularCard extends StatelessWidget {
         onTap: onPress,
         child: Image.asset(
           "assets/img/home/" + imgSrc,
-          width: 20,
+          width: 16,
         ));
   }
 }
