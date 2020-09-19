@@ -15,12 +15,13 @@ class HomeAppBar extends StatelessWidget {
             logoSize: 0.08,
             isVisible: false,
             contWidth: 0.34,
+            logoColor: Color(0xff33575A),
           ),
           Row(
             children: [
-              drawButton(),
+              drawButton("search.png",()=>print("search")),
               CustomSizedBox(widNum: 0.04, heiNum: 0.0),
-              drawButton(),
+              drawButton("setting.png",()=>print("setting")),
             ],
           )
         ],
@@ -28,15 +29,18 @@ class HomeAppBar extends StatelessWidget {
     );
   }
 
-  Widget drawButton() {
-    return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-          color: Color(0xffC2CCCC).withOpacity(0.4), shape: BoxShape.circle),
-      child: Center(
-        child: Icon(
-          Icons.search,
-          color: kPrimaryColor,
+  Widget drawButton(imgSrc,onPress) {
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        padding: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+            color: Color(0xffC2CCCC).withOpacity(0.4), shape: BoxShape.circle),
+        child: Center(
+          child: Image.asset(
+            "assets/img/home/" + imgSrc,
+            width: 20,
+          ),
         ),
       ),
     );

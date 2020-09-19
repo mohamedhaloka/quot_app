@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import '../const.dart';
 
 class QuotLogo extends StatelessWidget {
-  QuotLogo({this.isVisible, this.contWidth, @required this.logoSize});
+  QuotLogo(
+      {this.isVisible,
+      this.contWidth,
+      @required this.logoSize,
+      this.logoColor});
   bool isVisible;
   double contWidth, logoSize;
+  Color logoColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +33,7 @@ class QuotLogo extends StatelessWidget {
             "QUOTES",
             style: TextStyle(
                 fontFamily: "Playfair",
+                color: logoColor == null ? Colors.black : logoColor,
                 fontSize: customHeight(context, logoSize),
                 fontWeight: FontWeight.bold),
           ),
