@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 
@@ -12,16 +11,16 @@ class HomeAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           QuotLogo(
-            logoSize: 0.08,
+            logoSize: 0.075,
             isVisible: false,
-            contWidth: 0.34,
+            contWidth: 0.32,
             logoColor: Color(0xff33575A),
           ),
           Row(
             children: [
-              drawButton("search.png",()=>print("search")),
+              drawButton("search.png", () => print("search")),
               CustomSizedBox(widNum: 0.04, heiNum: 0.0),
-              drawButton("setting.png",()=>print("setting")),
+              drawButton("setting.png", () => print("setting")),
             ],
           )
         ],
@@ -29,7 +28,7 @@ class HomeAppBar extends StatelessWidget {
     );
   }
 
-  Widget drawButton(imgSrc,onPress) {
+  Widget drawButton(imgSrc, onPress) {
     return GestureDetector(
       onTap: onPress,
       child: Container(
