@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quot_app/const.dart';
+import 'package:quot_app/views/home/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 
 void main() {
@@ -13,11 +15,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        accentColor: kPrimaryColor
       ),
       routes: {
         SignInView.id: (context) => SignInView(),
+        HomeView.id: (context) => HomeView(),
       },
-      initialRoute: SignInView.id,
+      initialRoute: HomeView.id,
     );
   }
 }

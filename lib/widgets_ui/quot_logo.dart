@@ -10,7 +10,7 @@ class QuotLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: contWidth == null ? 262 : contWidth,
+      width: contWidth == null ? 295 : customHeight(context, contWidth),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,7 +28,7 @@ class QuotLogo extends StatelessWidget {
             "QUOTES",
             style: TextStyle(
                 fontFamily: "Playfair",
-                fontSize: logoSize,
+                fontSize: customHeight(context, logoSize),
                 fontWeight: FontWeight.bold),
           ),
           Visibility(
