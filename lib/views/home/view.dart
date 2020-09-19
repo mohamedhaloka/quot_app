@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/home/app_bar.dart';
 import 'file:///C:/Users/laptop/AndroidStudioProjects/quot_app/lib/views/home/popular/view.dart';
+import 'package:quot_app/views/home/author/view.dart';
 
 class HomeView extends StatefulWidget {
   static String id = "Home View";
@@ -18,7 +19,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   List pages = [
     PopularView(),
-    Text("2"),
+    AuthorView(),
     Text("3"),
     Text("4"),
   ];

@@ -16,7 +16,7 @@ class PopularView extends StatelessWidget {
             position: index,
             duration: const Duration(milliseconds: 575),
             child: SlideAnimation(
-              verticalOffset: 50.0,
+              verticalOffset: 150.0,
               child: PopularCard(),
             ),
           );
