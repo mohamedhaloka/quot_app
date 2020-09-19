@@ -36,20 +36,20 @@ class PopularCard extends StatelessWidget {
               ],
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.005),
-            GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context, FullQuoteView.id);
-              },
-              child: Expanded(
+            Expanded(
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, FullQuoteView.id);
+                  },
                   child: Center(
-                child: Text(
-                  "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
-                  maxLines: 5,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontFamily: "Playfair"),
-                ),
-              )),
-            ),
+                    child: Text(
+                      "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
+                      maxLines: 5,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontFamily: "Playfair"),
+                    ),
+                  ),
+                )),
             CustomSizedBox(widNum: 0.0, heiNum: 0.01),
             Align(
                 alignment: Alignment.centerRight,

@@ -7,10 +7,12 @@ class QuotLogo extends StatelessWidget {
       {this.isVisible,
       this.contWidth,
       @required this.logoSize,
+      this.subTittle,
       this.logoColor});
   bool isVisible;
   double contWidth, logoSize;
   Color logoColor;
+  double subTittle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class QuotLogo extends StatelessWidget {
               "The",
               style: TextStyle(
                   color: kPrimaryColor,
-                  fontSize: 26,
+                  fontSize: subTittle == null ? 26 : subTittle,
                   fontWeight: FontWeight.w300),
             ),
           ),
@@ -45,7 +47,7 @@ class QuotLogo extends StatelessWidget {
                 "You Love",
                 style: TextStyle(
                     color: kPrimaryColor,
-                    fontSize: 26,
+                    fontSize: subTittle == null ? 26 : subTittle,
                     fontWeight: FontWeight.w300),
                 textAlign: TextAlign.end,
               ),

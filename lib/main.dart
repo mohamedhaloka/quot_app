@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Quot',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          platform: TargetPlatform.iOS,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           accentColor: kPrimaryColor),
       routes: {
