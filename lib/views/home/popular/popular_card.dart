@@ -25,34 +25,35 @@ class PopularCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  "assets/img/home/mark.png",
-                  width: 16,
-                  color: kScandreyColor,
+                Text(
+                  "\''",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: kScandreyColor,
+                      fontSize: 30),
                 ),
                 Image.asset(
                   "assets/img/home/bookmark.png",
                   width: 20,
                   color: kScandreyColor,
-
                 )
               ],
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.005),
             Expanded(
                 child: GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, FullQuoteView.id);
-                  },
-                  child: Center(
-                    child: Text(
-                      "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
-                      maxLines: 5,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontFamily: "Playfair"),
-                    ),
-                  ),
-                )),
+              onTap: () {
+                Navigator.pushNamed(context, FullQuoteView.id);
+              },
+              child: Center(
+                child: Text(
+                  "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontFamily: "Playfair"),
+                ),
+              ),
+            )),
             CustomSizedBox(widNum: 0.0, heiNum: 0.01),
             Align(
                 alignment: Alignment.centerRight,
