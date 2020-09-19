@@ -26,6 +26,7 @@ class AuthorCard extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Image.asset(
                 "assets/img/home/bookmark.png",
+                color: kScandreyColor,
                 width: 20,
               ),
             ),
@@ -41,6 +42,7 @@ class AuthorCard extends StatelessWidget {
                   "Mohamed Nasr",
                   style: TextStyle(
                       fontSize: 16,
+                      color: kScandreyColor,
                       fontFamily: "Playfair",
                       fontWeight: FontWeight.bold),
                 )
@@ -69,6 +71,7 @@ class AuthorCard extends StatelessWidget {
         child: Image.asset(
           "assets/img/home/" + imgSrc,
           width: 16,
+          color: kScandreyColor,
         ));
   }
 }

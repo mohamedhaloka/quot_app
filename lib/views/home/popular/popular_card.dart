@@ -25,13 +25,16 @@ class PopularCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "\"",
-                  style: TextStyle(fontSize: 30),
+                Image.asset(
+                  "assets/img/home/mark.png",
+                  width: 16,
+                  color: kScandreyColor,
                 ),
                 Image.asset(
                   "assets/img/home/bookmark.png",
                   width: 20,
+                  color: kScandreyColor,
+
                 )
               ],
             ),
@@ -103,6 +106,7 @@ class PopularCard extends StatelessWidget {
         child: Image.asset(
           "assets/img/home/" + imgSrc,
           width: 16,
+          color: kScandreyColor,
         ));
   }
 }
