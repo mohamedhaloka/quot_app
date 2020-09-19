@@ -11,7 +11,7 @@ class HomeAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           QuotLogo(
-            logoSize: 0.075,
+            logoSize: 0.072,
             isVisible: false,
             contWidth: 0.3,
             logoColor: Color(0xff33575A),

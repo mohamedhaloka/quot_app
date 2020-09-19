@@ -1,12 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
 class AuthorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.only(left: 6, bottom: 6),
         padding: EdgeInsets.all(10),
-        margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
@@ -18,6 +20,7 @@ class AuthorCard extends StatelessWidget {
                   spreadRadius: 3)
             ]),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Align(
               alignment: Alignment.centerRight,
@@ -26,29 +29,23 @@ class AuthorCard extends StatelessWidget {
                 width: 20,
               ),
             ),
-            CustomSizedBox(widNum: 0.0, heiNum: 0.005),
-            Expanded(
-                child: Center(
-              child: Column(
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.black54, shape: BoxShape.circle),
-                  ),
-                  CustomSizedBox(widNum: 0.0, heiNum: 0.02),
-                  Text(
-                    "- Mohamed Nasr",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: "Playfair",
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            )),
-            CustomSizedBox(widNum: 0.0, heiNum: 0.012),
+            Column(
+              children: [
+                Container(
+                  width: customHeight(context, 0.14),
+                  height: customHeight(context, 0.14),
+                  decoration: BoxDecoration(
+                      color: Colors.black54, shape: BoxShape.circle),
+                ),
+                Text(
+                  "Mohamed Nasr",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: "Playfair",
+                      fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

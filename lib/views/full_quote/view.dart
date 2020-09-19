@@ -39,7 +39,7 @@ class FullQuoteView extends StatelessWidget {
               children: [
                 QuotLogo(
                   logoSize: 0.04,
-                  contWidth: 0.15,
+                  contWidth: 0.17,
                   subTittle: 12,
                 ),
                 CustomSizedBox(widNum: 0.0, heiNum: 0.03),

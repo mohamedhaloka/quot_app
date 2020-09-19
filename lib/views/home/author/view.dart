@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quot_app/views/home/author/author_card.dart';
-import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
 class AuthorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: GridView.builder(
+        padding: EdgeInsets.only(left: 16, right: 16, top: 4),
         physics: BouncingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
