@@ -31,16 +31,16 @@ class SettingView extends StatelessWidget {
                   fontSize: 30,
                   fontFamily: "Titillium"),
             ),
-            CustomSizedBox(widNum: 0.0, heiNum: 0.06),
-            settingOptions(() {}, "", ""),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "", ""),
+            settingOptions(() {}, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "", "notification.png"),
+            settingOptions(() {}, "About US", "information.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "", "information.png"),
+            settingOptions(() {}, "About Quot", "about.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "", "rate.png"),
+            settingOptions(() {}, "Rate US", "rate.png"),
+            CustomSizedBox(widNum: 0.0, heiNum: 0.04),
+            settingOptions(() {}, "Share Application", "share.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.1),
             Center(
               child: QuotLogo(
@@ -68,17 +68,19 @@ class SettingView extends StatelessWidget {
         elevation: 0.0,
         highlightElevation: 0.0,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Image.asset(
+              "assets/img/setting/" + imgSrc,
+              width: 17,
+              color: kScandreyColor,
+            ),
+            CustomSizedBox(widNum: 0.02, heiNum: 0.0),
             Text(
               tittle,
               style:
                   TextStyle(color: kScandreyColor, fontWeight: FontWeight.bold),
             ),
-            Image.asset(
-              "assets/img/setting/" + imgSrc,
-              width: 17,
-            )
           ],
         ),
         color: Colors.transparent,
