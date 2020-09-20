@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/views/home/view.dart';
+import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 
 void main() {
@@ -17,11 +18,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           platform: TargetPlatform.iOS,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: "Titillium",
           accentColor: kPrimaryColor),
       routes: {
         SignInView.id: (context) => SignInView(),
         HomeView.id: (context) => HomeView(),
         FullQuoteView.id: (context) => FullQuoteView(),
+        SettingView.id: (context) => SettingView(),
       },
       initialRoute: HomeView.id,
     );

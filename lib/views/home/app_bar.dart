@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 
@@ -20,7 +21,8 @@ class HomeAppBar extends StatelessWidget {
             children: [
               drawButton("search.png", () => print("search")),
               CustomSizedBox(widNum: 0.04, heiNum: 0.0),
-              drawButton("setting.png", () => print("setting")),
+              drawButton("setting.png",
+                  () => Navigator.pushNamed(context, SettingView.id)),
             ],
           )
         ],

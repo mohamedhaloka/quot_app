@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
+import 'package:quot_app/widgets_ui/custom_filled_button.dart';
+import 'package:quot_app/widgets_ui/custom_outline_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
-import 'package:quot_app/widgets_ui/quot_logo.dart';
 
 import 'info.dart';
 
@@ -26,44 +27,15 @@ class FullQuoteView extends StatelessWidget {
           CustomSizedBox(widNum: 0.0, heiNum: 0.04),
           QuoteInfo(),
           CustomSizedBox(widNum: 0.0, heiNum: 0.05),
-          Container(
-            height: 50,
-            child: RaisedButton(
-              onPressed: () {},
-              child: Text(
-                "copy".toUpperCase(),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30),
-              ),
-              elevation: 0.0,
-              highlightElevation: 0.0,
-              color: kScandreyColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)),
-            ),
-          ),
+          FilledButton(
+              tittle: "copy".toUpperCase(),
+              onPress: () => print("copy button"),
+              buttonColor: kScandreyColor),
           CustomSizedBox(widNum: 0.0, heiNum: 0.03),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: kScandreyColor, width: 2)),
-            child: RaisedButton(
-              onPressed: () {},
-              child: Text(
-                "share".toUpperCase(),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kScandreyColor,
-                    fontSize: 30),
-              ),
-              elevation: 0.0,
-              highlightElevation: 0.0,
-              color: Colors.transparent,
-            ),
-          ),
+          OutLineButton(
+              tittle: "share".toUpperCase(),
+              onPress: () => print("share button"),
+              outLineColor: kScandreyColor)
         ],
       ),
     );

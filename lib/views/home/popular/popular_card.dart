@@ -32,10 +32,13 @@ class PopularCard extends StatelessWidget {
                       color: kScandreyColor,
                       fontSize: 30),
                 ),
-                Image.asset(
-                  "assets/img/home/bookmark.png",
-                  width: 20,
-                  color: kScandreyColor,
+                GestureDetector(
+                  onTap: ()=>print("bookmark"),
+                  child: Image.asset(
+                    "assets/img/home/bookmark.png",
+                    width: 20,
+                    color: kScandreyColor,
+                  ),
                 )
               ],
             ),

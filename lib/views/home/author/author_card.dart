@@ -7,7 +7,7 @@ class AuthorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(left: 6, bottom: 6),
+        margin: EdgeInsets.only(left: 10, bottom: 10),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.white,
@@ -22,12 +22,15 @@ class AuthorCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: Image.asset(
-                "assets/img/home/bookmark.png",
-                color: kScandreyColor,
-                width: 20,
+            GestureDetector(
+              onTap: () => print("bookmark"),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Image.asset(
+                  "assets/img/home/bookmark.png",
+                  color: kScandreyColor,
+                  width: 20,
+                ),
               ),
             ),
             Column(
