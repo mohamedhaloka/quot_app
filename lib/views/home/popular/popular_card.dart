@@ -3,6 +3,7 @@ import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/db_helper.dart';
 import 'package:quot_app/models/quot.dart';
+import 'package:quot_app/models/quotes.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:share/share.dart';
@@ -10,12 +11,14 @@ import 'package:share/share.dart';
 import '../../../const.dart';
 
 class PopularCard extends StatefulWidget {
+  PopularCard({@required this.quotesInfo});
+  Quotes quotesInfo;
   @override
   _PopularCardState createState() => _PopularCardState();
 }
 
 class _PopularCardState extends State<PopularCard> {
-  String quotDesc =
+  String quot =
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into";
 
   DBHelper dbHelper;
@@ -58,11 +61,11 @@ class _PopularCardState extends State<PopularCard> {
             Expanded(
                 child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, FullQuoteView.id);
+                Navigator.pushNamed(context, FullQuoteView.id,arguments: widget.quotesInfo);
               },
               child: Center(
                 child: Text(
-                  quotDesc,
+                  widget.quotesInfo.quotes,
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontFamily: "Playfair"),
@@ -73,7 +76,7 @@ class _PopularCardState extends State<PopularCard> {
             Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  "- Mohamed Nasr",
+                  "- ${widget.quotesInfo.author}",
                   style: TextStyle(
                       fontSize: 10,
                       fontFamily: "Playfair",
@@ -86,10 +89,11 @@ class _PopularCardState extends State<PopularCard> {
                 Row(
                   children: [
                     quoteOption("like.png", () async {
-                      Quot quot = Quot({'quot': quotDesc});
-                      int id = await dbHelper.createQuotes(quot);
-                      Scaffold.of(context).showSnackBar(
-                          SnackBar(content: Text("Quot Add Successfuly")));
+                      var quots = Quot({'quot': quot});
+                      int id = await dbHelper.createQuotes(quots);
+                      print("quote id is $id");
+                      // Scaffold.of(context).showSnackBar(
+                      //     SnackBar(content: Text("Quot Add Successfuly")));
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
@@ -118,9 +122,9 @@ class _PopularCardState extends State<PopularCard> {
                           fontFamily: "Titillium"),
                     )),
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ));
   }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:quot_app/models/quotes.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 
 import '../../const.dart';
 
 class QuoteInfo extends StatelessWidget {
+  QuoteInfo({@required this.quotesInfo});
+  Quotes quotesInfo;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +32,7 @@ class QuoteInfo extends StatelessWidget {
           ),
           CustomSizedBox(widNum: 0.0, heiNum: 0.03),
           SelectableText(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            quotesInfo.quotes,
             style: TextStyle(
                 fontSize: 22, fontFamily: "Playfair", color: kPrimaryColor),
             textAlign: TextAlign.center,
@@ -38,7 +41,7 @@ class QuoteInfo extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Text(
-              "- Mohamed Nasr",
+              "- ${quotesInfo.author}",
               style: TextStyle(
                   fontSize: 16,
                   fontFamily: "Playfair",

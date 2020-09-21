@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1037867734218",
+    "firebase_url": "https://quot-e5717.firebaseio.com",
+    "project_id": "quot-e5717",
+    "storage_bucket": "quot-e5717.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037867734218:android:40146c8d465b800b759033",
+        "android_client_info": {
+          "package_name": "com.quot_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037867734218-pjkqvic1josp9fcj7411kru69n7ih34f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUpIHmSC5rLpOaxXhVrWjxnJsOF4qfRFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037867734218-pjkqvic1josp9fcj7411kru69n7ih34f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

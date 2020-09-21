@@ -2,6 +2,7 @@ import 'package:clipboard/clipboard.dart';
 import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
+import 'package:quot_app/models/quotes.dart';
 import 'package:quot_app/widgets_ui/custom_filled_button.dart';
 import 'package:quot_app/widgets_ui/custom_outline_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
@@ -13,6 +14,7 @@ class FullQuoteView extends StatelessWidget {
   static String id = "Full Quote View";
   @override
   Widget build(BuildContext context) {
+    Quotes quotes = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       body: ListView(
         physics: BouncingScrollPhysics(),
@@ -28,7 +30,9 @@ class FullQuoteView extends StatelessWidget {
             ],
           ),
           CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-          QuoteInfo(),
+          QuoteInfo(
+            quotesInfo: quotes,
+          ),
           CustomSizedBox(widNum: 0.0, heiNum: 0.05),
           FilledButton(
               tittle: "copy".toUpperCase(),
