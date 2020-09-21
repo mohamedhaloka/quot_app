@@ -6,14 +6,22 @@ import 'package:quot_app/widgets_ui/quot_logo.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SettingView extends StatelessWidget {
+class SettingView extends StatefulWidget {
   static String id = "Setting View";
+
+  @override
+  _SettingViewState createState() => _SettingViewState();
+}
+
+class _SettingViewState extends State<SettingView> {
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 12),
         child: ListView(
+          padding: EdgeInsets.all(0),
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,9 +43,7 @@ class SettingView extends StatelessWidget {
                   fontFamily: "Titillium"),
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {
-              _notification(context);
-            }, "Notification", "notification.png"),
+            settingOptions(() {}, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
               Navigator.pushNamed(context, AboutView.id, arguments: false);
@@ -78,23 +84,38 @@ class SettingView extends StatelessWidget {
           border: Border.all(width: 1, color: kScandreyColor),
           borderRadius: BorderRadius.circular(18)),
       child: RaisedButton(
-        onPressed: onPress,
+        onPressed: tittle == "Notification" ? null : onPress,
+        disabledColor: Colors.transparent,
         elevation: 0.0,
         highlightElevation: 0.0,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(
-              "assets/img/setting/" + imgSrc,
-              width: 17,
-              color: kScandreyColor,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(
+                  "assets/img/setting/" + imgSrc,
+                  width: 17,
+                  color: kScandreyColor,
+                ),
+                CustomSizedBox(widNum: 0.04, heiNum: 0.0),
+                Text(
+                  tittle,
+                  style: TextStyle(
+                      color: kScandreyColor, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-            CustomSizedBox(widNum: 0.04, heiNum: 0.0),
-            Text(
-              tittle,
-              style:
-                  TextStyle(color: kScandreyColor, fontWeight: FontWeight.bold),
-            ),
+            tittle == "Notification"
+                ? Switch(
+                    value: value,
+                    onChanged: (val) {
+                      setState(() {
+                        value = val;
+                      });
+                    })
+                : Container(),
           ],
         ),
         color: Colors.transparent,
