@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
-import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:share/share.dart';
 
 class AuthorCard extends StatelessWidget {
@@ -34,23 +33,26 @@ class AuthorCard extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
-              children: [
-                Container(
-                  width: customHeight(context, 0.14),
-                  height: customHeight(context, 0.14),
-                  decoration: BoxDecoration(
-                      color: Colors.black54, shape: BoxShape.circle),
-                ),
-                Text(
-                  "Mohamed Nasr",
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: kScandreyColor,
-                      fontFamily: "Playfair",
-                      fontWeight: FontWeight.bold),
-                )
-              ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: customHeight(context, 0.14),
+                    height: customHeight(context, 0.14),
+                    decoration: BoxDecoration(
+                        color: Colors.black54, shape: BoxShape.circle),
+                  ),
+                  Text(
+                    "Mohamed Nasr",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: kScandreyColor,
+                        fontFamily: "Playfair",
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
             Align(
               child: authorOption("share.png", () {

@@ -19,7 +19,7 @@ class HomeAppBar extends StatelessWidget {
           ),
           Row(
             children: [
-              drawButton("search.png", () => print("search")),
+              drawButton("search.png", () {}),
               CustomSizedBox(widNum: 0.04, heiNum: 0.0),
               drawButton("setting.png",
                   () => Navigator.pushNamed(context, SettingView.id)),
