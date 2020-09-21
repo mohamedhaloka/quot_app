@@ -1,13 +1,31 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:quot_app/db_helper.dart';
+import 'package:quot_app/models/quot.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:share/share.dart';
 
 import '../../../const.dart';
 
-class PopularCard extends StatelessWidget {
+class PopularCard extends StatefulWidget {
+  @override
+  _PopularCardState createState() => _PopularCardState();
+}
+
+class _PopularCardState extends State<PopularCard> {
+  String quotDesc =
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into";
+
+  DBHelper dbHelper;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    dbHelper = DBHelper();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +62,7 @@ class PopularCard extends StatelessWidget {
               },
               child: Center(
                 child: Text(
-                  "kkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkdkkdkdkdkkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkkdkdkdkdkdkdkdododldkdidokdjddkdkodkddkd",
+                  quotDesc,
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontFamily: "Playfair"),
@@ -67,7 +85,12 @@ class PopularCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    quoteOption("like.png", () => print("like")),
+                    quoteOption("like.png", () async {
+                      Quot quot = Quot({'quot': quotDesc});
+                      int id = await dbHelper.createQuotes(quot);
+                      Scaffold.of(context).showSnackBar(
+                          SnackBar(content: Text("Quot Add Successfuly")));
+                    }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
                       Share.share('check out my website https://example.com');
