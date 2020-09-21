@@ -6,9 +6,13 @@ import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 import 'package:easy_alert/easy_alert.dart';
 
+
 void main() {
-  runApp(new AlertProvider(
-    child: new MyApp(),
+  runApp( AlertProvider(
+    child:  MyApp(),
+    config: AlertConfig(
+        ok: "OK text for `ok` button in AlertDialog",
+        cancel: "CANCEL text for `cancel` button in AlertDialog"),
   ));
 }
 

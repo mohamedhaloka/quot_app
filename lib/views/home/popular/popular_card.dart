@@ -1,6 +1,9 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
+import 'package:share/share.dart';
 
 import '../../../const.dart';
 
@@ -22,7 +25,6 @@ class PopularCard extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -32,14 +34,6 @@ class PopularCard extends StatelessWidget {
                       color: kScandreyColor,
                       fontSize: 30),
                 ),
-                GestureDetector(
-                  onTap: ()=>print("bookmark"),
-                  child: Image.asset(
-                    "assets/img/home/bookmark.png",
-                    width: 20,
-                    color: kScandreyColor,
-                  ),
-                )
               ],
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.005),
@@ -75,13 +69,17 @@ class PopularCard extends StatelessWidget {
                   children: [
                     quoteOption("like.png", () => print("like")),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
-                    quoteOption("dislike.png", () => print("dislike")),
-                    CustomSizedBox(widNum: 0.02, heiNum: 0.0),
-                    quoteOption("share.png", () => print("share")),
+                    quoteOption("share.png", () {
+                      Share.share('check out my website https://example.com');
+                    }),
                   ],
                 ),
                 GestureDetector(
-                  onTap: () => print("copy"),
+                  onTap: () {
+                    FlutterClipboard.copy('Quote')
+                        .then((value) => print('copied'));
+                    Alert.toast(context, "You just copy quote");
+                  },
                   child: Container(
                     width: 36,
                     height: 18,

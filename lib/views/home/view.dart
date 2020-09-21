@@ -21,13 +21,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     PopularView(),
     AuthorView(),
     Text("3"),
-    Text("4"),
   ];
 
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 4);
+    _tabController = new TabController(vsync: this, length: 3);
   }
 
   @override
@@ -89,23 +88,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           ),
           Tab(
             child: Text(
-              "By general",
+              "Favourite",
               style: TextStyle(
                 fontSize: _selectedTab == 2 ? 35 : 30,
                 fontWeight:
                     _selectedTab == 2 ? FontWeight.w600 : FontWeight.w400,
                 color: _selectedTab == 2 ? kScandreyColor : Colors.grey[400],
-              ),
-            ),
-          ),
-          Tab(
-            child: Text(
-              "Favourite",
-              style: TextStyle(
-                fontSize: _selectedTab == 3 ? 35 : 30,
-                fontWeight:
-                    _selectedTab == 3 ? FontWeight.w600 : FontWeight.w400,
-                color: _selectedTab == 3 ? kScandreyColor : Colors.grey[400],
               ),
             ),
           ),
