@@ -89,7 +89,7 @@ class SettingView extends StatelessWidget {
               width: 17,
               color: kScandreyColor,
             ),
-            CustomSizedBox(widNum: 0.02, heiNum: 0.0),
+            CustomSizedBox(widNum: 0.04, heiNum: 0.0),
             Text(
               tittle,
               style:

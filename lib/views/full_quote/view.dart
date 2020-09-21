@@ -1,8 +1,11 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_filled_button.dart';
 import 'package:quot_app/widgets_ui/custom_outline_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
+import 'package:share/share.dart';
 
 import 'info.dart';
 
@@ -29,12 +32,18 @@ class FullQuoteView extends StatelessWidget {
           CustomSizedBox(widNum: 0.0, heiNum: 0.05),
           FilledButton(
               tittle: "copy".toUpperCase(),
-              onPress: () => print("copy button"),
+              onPress: () {
+                FlutterClipboard.copy('Quote').then((value) => print('copied'));
+                Alert.toast(context, "You just copy quote");
+              },
               buttonColor: kScandreyColor),
           CustomSizedBox(widNum: 0.0, heiNum: 0.03),
           OutLineButton(
               tittle: "share".toUpperCase(),
-              onPress: () => print("share button"),
+              onPress: () {
+                Share.share(
+                    "Download Quot App via link: https://play.google.com/store/apps/details?id=com.quot_app");
+              },
               outLineColor: kScandreyColor)
         ],
       ),

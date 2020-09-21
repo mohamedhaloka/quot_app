@@ -52,15 +52,12 @@ class AuthorCard extends StatelessWidget {
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                authorOption("like.png", () => print("like")),
-                authorOption("share.png", () {
-                  Share.share("Quote");
-                }),
-              ],
-            ),
+            Align(
+              child: authorOption("share.png", () {
+                Share.share("Quote");
+              }),
+              alignment: Alignment.centerRight,
+            )
           ],
         ));
   }
