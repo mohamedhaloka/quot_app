@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingView extends StatelessWidget {
   static String id = "Setting View";
@@ -32,15 +34,22 @@ class SettingView extends StatelessWidget {
                   fontFamily: "Titillium"),
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "Notification", "notification.png"),
+            settingOptions(() {
+              _notification(context);
+            }, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {}, "About US", "information.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {}, "About Quot", "about.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "Rate US", "rate.png"),
+            settingOptions(() {
+              _launchURL("market://details?id=com.quot_app");
+            }, "Rate Application", "rate.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "Share Application", "share.png"),
+            settingOptions(() {
+              Share.share(
+                  "Download Quot App via link: https://play.google.com/store/apps/details?id=com.quot_app");
+            }, "Share Application", "share.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.1),
             Center(
               child: QuotLogo(
@@ -104,5 +113,28 @@ class SettingView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _notification(context) {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: Text("Hi"),
+              actions: [
+                FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Hello"))
+              ],
+            ));
   }
 }

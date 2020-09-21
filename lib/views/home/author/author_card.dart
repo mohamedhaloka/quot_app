@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
+import 'package:share/share.dart';
 
 class AuthorCard extends StatelessWidget {
   @override
@@ -54,14 +55,10 @@ class AuthorCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    authorOption("like.png", () => print("like")),
-                    CustomSizedBox(widNum: 0.02, heiNum: 0.0),
-                    authorOption("dislike.png", () => print("dislike")),
-                  ],
-                ),
-                authorOption("share.png", () => print("share")),
+                authorOption("like.png", () => print("like")),
+                authorOption("share.png", () {
+                  Share.share("Quote");
+                }),
               ],
             ),
           ],

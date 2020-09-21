@@ -5,6 +5,7 @@ import 'package:quot_app/views/home/app_bar.dart';
 import 'file:///C:/Users/laptop/AndroidStudioProjects/quot_app/lib/views/home/popular/view.dart';
 import 'package:quot_app/views/home/author/view.dart';
 
+
 class HomeView extends StatefulWidget {
   static String id = "Home View";
 
