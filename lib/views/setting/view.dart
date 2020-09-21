@@ -6,6 +6,7 @@ import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingView extends StatefulWidget {
   static String id = "Setting View";
@@ -16,6 +17,18 @@ class SettingView extends StatefulWidget {
 
 class _SettingViewState extends State<SettingView> {
   bool value = false;
+  SharedPreferences preferences;
+
+  storeNotificationVal(val) async {
+    preferences = await SharedPreferences.getInstance();
+    preferences.setBool("notificationVal", val);
+  }
+
+  getNotificationVal() async {
+    preferences = await SharedPreferences.getInstance();
+    value = preferences.getBool("notificationVal") ?? false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,6 +133,7 @@ class _SettingViewState extends State<SettingView> {
                       setState(() {
                         value = val;
                       });
+                      storeNotificationVal(val);
                     })
                 : Container(),
           ],
