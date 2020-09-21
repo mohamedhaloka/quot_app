@@ -61,7 +61,8 @@ class _PopularCardState extends State<PopularCard> {
             Expanded(
                 child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, FullQuoteView.id,arguments: widget.quotesInfo);
+                Navigator.pushNamed(context, FullQuoteView.id,
+                    arguments: widget.quotesInfo);
               },
               child: Center(
                 child: Text(
@@ -97,13 +98,13 @@ class _PopularCardState extends State<PopularCard> {
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
-                      Share.share('check out my website https://example.com');
+                      Share.share('${widget.quotesInfo.quotes}');
                     }),
                   ],
                 ),
                 GestureDetector(
                   onTap: () {
-                    FlutterClipboard.copy('Quote')
+                    FlutterClipboard.copy(widget.quotesInfo.quotes)
                         .then((value) => print('copied'));
                     Alert.toast(context, "You just copy quote");
                   },

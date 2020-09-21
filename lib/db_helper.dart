@@ -15,15 +15,21 @@ class DBHelper {
       return database;
     }
     String path = join(await getDatabasesPath(), 'main.db');
-    database = await openDatabase(path, version: 1, onCreate: _onCreate,);
+    database = await openDatabase(
+      path,
+      version: 1,
+      onCreate: (db,v){
+        db.execute('''
+        create table quotes(
+          id integer primary key autoincrement,
+          quote text not null
+        ''');
+      },
+    );
     print("done");
     return database;
   }
 
-  Future _onCreate(Database db, int version) async {
-    await db.execute(
-        "CREATE TABLE $tableName(id INTEGER PRIMARY KEY AUTOINCREMENT, quot TEXT");
-  }
 
   Future<int> createQuotes(Quot quot) async {
     print("step 1");
