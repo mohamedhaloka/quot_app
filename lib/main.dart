@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/views/home/view.dart';
+import 'package:quot_app/views/setting/about_quot/view.dart';
 import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 import 'package:easy_alert/easy_alert.dart';
 
-
 void main() {
-  runApp( AlertProvider(
-    child:  MyApp(),
-    config: AlertConfig(
-        ok: "OK text for `ok` button in AlertDialog",
-        cancel: "CANCEL text for `cancel` button in AlertDialog"),
+  runApp(AlertProvider(
+    child: MyApp(),
+    config: AlertConfig(ok: "", cancel: ""),
   ));
 }
 
@@ -30,10 +28,11 @@ class MyApp extends StatelessWidget {
       routes: {
         SignInView.id: (context) => SignInView(),
         HomeView.id: (context) => HomeView(),
+        AboutQuot.id: (context) => AboutQuot(),
         FullQuoteView.id: (context) => FullQuoteView(),
         SettingView.id: (context) => SettingView(),
       },
-      initialRoute: HomeView.id,
+      initialRoute: SignInView.id,
     );
   }
 }
