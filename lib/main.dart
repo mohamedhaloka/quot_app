@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/views/home/view.dart';
-import 'package:quot_app/views/setting/about_quot/view.dart';
+import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 import 'package:easy_alert/easy_alert.dart';

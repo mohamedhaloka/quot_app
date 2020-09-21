@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
-import 'package:quot_app/views/setting/about_quot/view.dart';
+import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 import 'package:share/share.dart';
@@ -39,10 +39,12 @@ class SettingView extends StatelessWidget {
               _notification(context);
             }, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "About US", "information.png"),
+            settingOptions(() {
+              Navigator.pushNamed(context, AboutQuot.id, arguments: false);
+            }, "About US", "information.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
-              Navigator.pushNamed(context, AboutQuot.id);
+              Navigator.pushNamed(context, AboutQuot.id, arguments: true);
             }, "About Quot", "about.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
