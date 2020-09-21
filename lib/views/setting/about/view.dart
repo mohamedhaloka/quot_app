@@ -3,8 +3,8 @@ import 'package:quot_app/const.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 
-class AboutQuot extends StatelessWidget {
-  static String id = "About Quot";
+class AboutView extends StatelessWidget {
+  static String id = "About View";
   @override
   Widget build(BuildContext context) {
     bool isAboutQuot = ModalRoute.of(context).settings.arguments;

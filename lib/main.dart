@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SignInView.id: (context) => SignInView(),
         HomeView.id: (context) => HomeView(),
-        AboutQuot.id: (context) => AboutQuot(),
+        AboutView.id: (context) => AboutView(),
         FullQuoteView.id: (context) => FullQuoteView(),
         SettingView.id: (context) => SettingView(),
       },

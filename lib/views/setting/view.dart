@@ -40,11 +40,11 @@ class SettingView extends StatelessWidget {
             }, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
-              Navigator.pushNamed(context, AboutQuot.id, arguments: false);
+              Navigator.pushNamed(context, AboutView.id, arguments: false);
             }, "About US", "information.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
-              Navigator.pushNamed(context, AboutQuot.id, arguments: true);
+              Navigator.pushNamed(context, AboutView.id, arguments: true);
             }, "About Quot", "about.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
