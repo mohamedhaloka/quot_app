@@ -19,18 +19,21 @@ class _SettingViewState extends State<SettingView> {
   bool value = false;
   SharedPreferences preferences;
 
-  storeNotificationVal(val) async {
+  storeNotificationVal(bool val) async {
     preferences = await SharedPreferences.getInstance();
     preferences.setBool("notificationVal", val);
   }
 
   getNotificationVal() async {
     preferences = await SharedPreferences.getInstance();
-    value = preferences.getBool("notificationVal") ?? false;
+    setState(() {
+      value = preferences.getBool("notificationVal") ?? false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    getNotificationVal();
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 12),
