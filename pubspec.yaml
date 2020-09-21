@@ -35,6 +35,8 @@ dependencies:
   clipboard: ^0.1.2+8
   share: ^0.6.5+1
   shared_preferences: ^0.5.10
+  path:
+  sqflite:
 
 dev_dependencies:
   flutter_test:
