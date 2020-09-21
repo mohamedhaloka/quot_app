@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
+import 'package:quot_app/models/authors.dart';
 import 'package:share/share.dart';
 
 class AuthorCard extends StatelessWidget {
+  AuthorCard({this.authors});
+
+  Authors authors;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,30 +37,37 @@ class AuthorCard extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: customHeight(context, 0.14),
-                    height: customHeight(context, 0.14),
-                    decoration: BoxDecoration(
-                        color: Colors.black54, shape: BoxShape.circle),
-                  ),
-                  Text(
-                    "Mohamed Nasr",
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: kScandreyColor,
-                        fontFamily: "Playfair",
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
+            GestureDetector(
+              onTap: () {},
+              child: Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: customHeight(context, 0.14),
+                      height: customHeight(context, 0.14),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: NetworkImage("${authors.img}"),
+                              fit: BoxFit.cover)),
+                    ),
+                    Text(
+                      "${authors.name}",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kScandreyColor,
+                          fontFamily: "Playfair",
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
               ),
             ),
             Align(
               child: authorOption("share.png", () {
-                Share.share("Quote");
+                Share.share(
+                    "To see all quotes about ${authors.name} download Quot App via the link https://play.google.com/store/apps/details?id=com.quot_app");
               }),
               alignment: Alignment.centerRight,
             )

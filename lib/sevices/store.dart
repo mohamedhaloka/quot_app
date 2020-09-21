@@ -7,4 +7,8 @@ class Store {
   Stream<QuerySnapshot> getQuotes() {
     return firebaseFireStore.collection(kQuotesCollection).snapshots();
   }
+
+  Stream<QuerySnapshot> getAuthors() {
+    return firebaseFireStore.collection(kAuthorCollection).snapshots();
+  }
 }
