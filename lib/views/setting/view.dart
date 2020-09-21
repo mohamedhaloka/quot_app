@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/setting/about/view.dart';
+import 'package:quot_app/views/sign_in/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 import 'package:share/share.dart';
@@ -46,11 +47,7 @@ class _SettingViewState extends State<SettingView> {
             settingOptions(() {}, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
-              Navigator.pushNamed(context, AboutView.id, arguments: false);
-            }, "About US", "information.png"),
-            CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {
-              Navigator.pushNamed(context, AboutView.id, arguments: true);
+              Navigator.pushNamed(context, AboutView.id);
             }, "About Quot", "about.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
@@ -61,6 +58,15 @@ class _SettingViewState extends State<SettingView> {
               Share.share(
                   "Download Quot App via link: https://play.google.com/store/apps/details?id=com.quot_app");
             }, "Share Application", "share.png"),
+            CustomSizedBox(widNum: 0.0, heiNum: 0.04),
+            settingOptions(() {
+              _sendEmail("mailto:mnhaloka@gmail.com");
+            }, "Contact US", "contact.png"),
+            CustomSizedBox(widNum: 0.0, heiNum: 0.04),
+            settingOptions(() {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => SignInView()));
+            }, "Sign Out", "logout.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.1),
             Center(
               child: QuotLogo(
@@ -149,18 +155,11 @@ class _SettingViewState extends State<SettingView> {
     }
   }
 
-  _notification(context) {
-    showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              content: Text("Hi"),
-              actions: [
-                FlatButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text("Hello"))
-              ],
-            ));
+  _sendEmail(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
