@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/views/home/view.dart';
-import 'package:quot_app/widgets_ui/quot_logo.dart';
 
 class SplashView extends StatefulWidget {
   static String id = "Splash View";
@@ -24,10 +24,25 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: QuotLogo(
-          logoSize: 0.09,
-          contWidth: 0.38,
+      body: Align(
+        alignment: Alignment.center,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/img/logo.png',
+              width: 170,
+            ),
+            Text(
+              "QUOTES",
+              style: TextStyle(
+                  fontFamily: "Playfair",
+                  color: Colors.black,
+                  fontSize: 70,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
       ),
     );

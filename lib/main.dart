@@ -19,7 +19,7 @@ void main() async {
 
   String _screen;
 
-  if (seen == false || seen == true) {
+  if (seen == false || seen == null) {
     _screen = SignInView.id;
   } else {
     _screen = SplashView.id;
@@ -35,7 +35,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({@required this.screen});
+  MyApp({this.screen});
   String screen;
   @override
   Widget build(BuildContext context) {

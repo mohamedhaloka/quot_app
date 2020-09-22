@@ -82,7 +82,10 @@ class _SettingViewState extends State<SettingView> {
               _sendEmail("mailto:mnhaloka@gmail.com");
             }, "Contact US", "contact.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {
+            settingOptions(() async {
+              SharedPreferences preferences =
+                  await SharedPreferences.getInstance();
+              preferences.setBool('seen', true);
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => SignInView()));
             }, "Sign Out", "logout.png"),
