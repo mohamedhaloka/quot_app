@@ -13,16 +13,20 @@ class DbHelper {
       return _db;
     }
     //define the path to the database
-    String path = join(await getDatabasesPath(), 'quote.db');
+    String path = join(await getDatabasesPath(), 'quote_collection.db');
     _db = await openDatabase(path, version: 1, onCreate: (Database db, int v) {
       //create all tables
-      //db.execute("create table quotes(id integer primary key autoincrement, name text not null, quote text not null, )");
+      // db.execute(
+      //     "create table quotes(id integer primary key autoincrement, quot text not null, )");
       db.execute('''
-          create table quotes(
-            id integer primary key autoincrement,
-            quote text not null
+          CREATE TABLE quotes(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            quot TEXT,
+            author TEXT
           );
-        ''');
+        ''').catchError((val) {
+        print(val);
+      });
     });
     return _db;
   }
@@ -33,7 +37,7 @@ class DbHelper {
     return db.insert('quotes', quote.toMap());
   }
 
-  Future<List> allQuotes() async {
+   allQuotes() async {
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
     return db.query('quotes', orderBy: 'id DESC');

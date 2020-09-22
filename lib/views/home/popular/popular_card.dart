@@ -90,11 +90,14 @@ class _PopularCardState extends State<PopularCard> {
                 Row(
                   children: [
                     quoteOption("like.png", () async {
-                      var quots = Quot({'quot': quot});
+                      var quots = Quot({
+                        'quot': widget.quotesInfo.quotes,
+                        'author': widget.quotesInfo.author
+                      });
                       int id = await dbHelper.createQuote(quots);
                       print("quote id is $id");
-                      // Scaffold.of(context).showSnackBar(
-                      //     SnackBar(content: Text("Quot Add Successfuly")));
+                      Scaffold.of(context).showSnackBar(
+                          SnackBar(content: Text("Quot Add Successfuly")));
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
