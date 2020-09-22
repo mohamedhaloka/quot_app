@@ -102,8 +102,7 @@ class _FavouriteViewState extends State<FavouriteView> {
                                         snapshot.data[index]['id']);
                                     print(
                                         "quote ${snapshot.data[index]['id']} is deleted ");
-                                    setState(() {
-                                    });
+                                    setState(() {});
                                   }),
                                   GestureDetector(
                                     onTap: () {
@@ -144,6 +143,8 @@ class _FavouriteViewState extends State<FavouriteView> {
                 crossAxisSpacing: 12.0,
               ),
             );
+          }else if (snapshot.hasData==null) {
+            return Text("error");
           }
           return Center(
             child: CircularProgressIndicator(),
