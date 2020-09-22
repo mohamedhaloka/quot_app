@@ -21,6 +21,7 @@ class _AuthorViewState extends State<AuthorView> {
         authorsInfo.add(Authors(
           img: doc.data()[kAuthorImage],
           name: doc.data()[kAuthorName],
+          description:doc.data()[kAuthorDescription]
         ));
         setState(() {
           isLoading = false;

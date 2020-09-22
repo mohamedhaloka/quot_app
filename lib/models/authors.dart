@@ -1,5 +1,5 @@
 class Authors {
-  String img,name;
+  String img,name,description;
 
-  Authors({this.name,this.img});
+  Authors({this.name,this.img,this.description});
 }

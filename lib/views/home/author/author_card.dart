@@ -29,11 +29,16 @@ class AuthorCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
-              onTap: () => print("bookmark"),
+              onTap: () {
+                showDialog(context: context,child: AlertDialog(
+                  title: Text("${authors.name}"),
+                  content: Text("${authors.description}"),
+                ));
+              },
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Image.asset(
-                  "assets/img/home/bookmark.png",
+                  "assets/img/setting/information.png",
                   color: kScandreyColor,
                   width: 20,
                 ),
