@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
-import 'package:quot_app/views/home/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
 class SignInOptions extends StatelessWidget {
@@ -8,47 +7,26 @@ class SignInOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "Login with",
-          style: TextStyle(fontFamily: "Titillium", fontSize: 18),
-        ),
         CustomSizedBox(widNum: 0.0, heiNum: 0.02),
         Container(
             width: 190,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                drawSignInOption("assets/img/sign_in/google.png", () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeView()));
-                }),
-                drawSignInOption("assets/img/sign_in/phone.png", () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeView()));
-                }),
-              ],
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: kScandreyColor, width: 2)),
+            child: RaisedButton(
+              onPressed: () {},
+              elevation: 0.0,
+              child: Text(
+                "Go".toUpperCase(),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              color: Colors.transparent,
+              highlightElevation: 0.0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
             ))
       ],
-    );
-  }
-
-  Widget drawSignInOption(imgSrc, onPress) {
-    return GestureDetector(
-      onTap: onPress,
-      child: Container(
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: kPrimaryColor, width: 1)),
-        child: Center(
-          child: Image.asset(
-            imgSrc,
-            color: kPrimaryColor,
-            width: 20,
-            height: 20,
-          ),
-        ),
-      ),
     );
   }
 }
