@@ -37,7 +37,7 @@ class DbHelper {
     return db.insert('quotes', quote.toMap());
   }
 
-   allQuotes() async {
+  allQuotes() async {
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
     return db.query('quotes', orderBy: 'id DESC');
