@@ -63,7 +63,7 @@ flutter:
     - assets/img/home/
     - assets/img/full-quot/
     - assets/img/setting/
-    - assets/img/logo.png
+    - assets/img/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

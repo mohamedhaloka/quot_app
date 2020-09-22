@@ -24,12 +24,11 @@ class _AuthorQuotesState extends State<AuthorQuotes> {
     await for (var snapshot in Store().getQuotes()) {
       var data = snapshot.docs;
       for (var doc in data) {
-        print(doc.data()[kAuthorName]);
-        print(authorQuotes.name);
         if (doc.data()[kAuthorName] == authorQuotes.name) {
           quotInfo.add(Quotes(
               author: doc.data()[kAuthorName],
-              quotes: doc.data()[kQuotesDescription]));
+              quotes: doc.data()[kQuotesDescription],));
+
         }
         setState(() {
           isLoading = false;

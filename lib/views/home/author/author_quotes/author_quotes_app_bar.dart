@@ -6,11 +6,6 @@ authorQuotesAppBar(context) {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0.0,
-    actions: [
-      drawButton("information.png", () {
-        _alertMessage(context);
-      })
-    ],
     leading: GestureDetector(
       onTap: () {
         Navigator.pop(context);
@@ -35,14 +30,6 @@ authorQuotesAppBar(context) {
       isVisible: false,
     ),
   );
-}
-
-_alertMessage(context) {
-  showDialog(
-      context: context,
-      builder: (context) => CupertinoAlertDialog(
-            content: Text(""),
-          ));
 }
 
 Widget drawButton(imgSrc, onPress) {
