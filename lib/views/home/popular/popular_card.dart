@@ -10,6 +10,7 @@ import 'package:share/share.dart';
 
 import '../../../const.dart';
 
+// ignore: must_be_immutable
 class PopularCard extends StatefulWidget {
   PopularCard({@required this.quotesInfo});
   Quotes quotesInfo;

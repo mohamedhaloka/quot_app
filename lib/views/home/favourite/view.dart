@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:quot_app/db_helper.dart';
-import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 
 import '../../../const.dart';

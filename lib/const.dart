@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
+import 'models/quotes.dart';
+
 const Color kPrimaryColor = Color(0xff276068);
 const Color kScandreyColor = Color(0xff33575A);
 
@@ -21,3 +23,5 @@ customHeight(context, heiNum) {
 customWidth(context, widNum) {
   return MediaQuery.of(context).size.width * widNum;
 }
+
+List<Quotes> quotesList = [];

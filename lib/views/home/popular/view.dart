@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -15,7 +14,6 @@ class PopularView extends StatefulWidget {
 class _PopularViewState extends State<PopularView> {
   bool isLoading = true;
 
-  List<Quotes> quotesList = [];
 
   getQuotes() async {
     await for (var snapshot in Store().getQuotes()) {

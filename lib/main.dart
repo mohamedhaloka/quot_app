@@ -4,6 +4,7 @@ import 'package:quot_app/const.dart';
 import 'package:quot_app/views/full_quote/view.dart';
 import 'package:quot_app/views/home/author/author_quotes/view.dart';
 import 'package:quot_app/views/home/view.dart';
+import 'package:quot_app/views/search/view.dart';
 import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/views/setting/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
@@ -34,6 +35,7 @@ void main() async {
   ));
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   MyApp({this.screen});
   String screen;
@@ -55,6 +57,7 @@ class MyApp extends StatelessWidget {
         FullQuoteView.id: (context) => FullQuoteView(),
         SettingView.id: (context) => SettingView(),
         AuthorQuotes.id: (context) => AuthorQuotes(),
+        SearchView.id: (context) => SearchView(),
       },
       initialRoute: screen,
     );

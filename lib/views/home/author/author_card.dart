@@ -5,6 +5,7 @@ import 'package:quot_app/models/authors.dart';
 import 'package:quot_app/views/home/author/author_quotes/view.dart';
 import 'package:share/share.dart';
 
+// ignore: must_be_immutable
 class AuthorCard extends StatelessWidget {
   AuthorCard({this.authors});
 

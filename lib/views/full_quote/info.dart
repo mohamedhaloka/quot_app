@@ -5,6 +5,7 @@ import 'package:quot_app/widgets_ui/quot_logo.dart';
 
 import '../../const.dart';
 
+// ignore: must_be_immutable
 class QuoteInfo extends StatelessWidget {
   QuoteInfo({@required this.quotesInfo});
   Quotes quotesInfo;

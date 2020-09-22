@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../const.dart';
-
+// ignore: must_be_immutable
 class FilledButton extends StatelessWidget {
   FilledButton(
       {@required this.tittle,

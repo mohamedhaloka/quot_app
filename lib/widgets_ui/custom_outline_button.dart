@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../const.dart';
 
+// ignore: must_be_immutable
 class OutLineButton extends StatelessWidget {
   OutLineButton(
       {@required this.tittle,

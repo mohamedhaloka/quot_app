@@ -1,6 +1,7 @@
 class Author {
   String _author;
 
+  // ignore: non_constant_identifier_names
   Quot(dynamic obj) {
     _author = obj['author'];
   }

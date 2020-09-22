@@ -1,15 +1,14 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
-import 'package:quot_app/models/quot.dart';
 import 'package:quot_app/models/quotes.dart';
 import 'package:quot_app/views/full_quote/view.dart';
-import 'package:quot_app/views/home/author/author_quotes/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:share/share.dart';
 
 import '../../../../const.dart';
 
+// ignore: must_be_immutable
 class AuthorQuotesCard extends StatelessWidget {
   AuthorQuotesCard({this.quotes});
 
