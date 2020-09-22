@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
+import 'package:quot_app/views/setting/Notification.dart';
 import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
@@ -60,7 +61,9 @@ class _SettingViewState extends State<SettingView> {
                   fontFamily: "Titillium"),
             ),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
-            settingOptions(() {}, "Notification", "notification.png"),
+            settingOptions(() {
+              DailyNotifications().pushNotifications();
+            }, "Notification", "notification.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
               Navigator.pushNamed(context, AboutView.id);

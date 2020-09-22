@@ -6,7 +6,6 @@ import 'file:///C:/Users/laptop/AndroidStudioProjects/quot_app/lib/views/home/po
 import 'package:quot_app/views/home/author/view.dart';
 import 'package:quot_app/views/home/favourite/view.dart';
 
-
 class HomeView extends StatefulWidget {
   static String id = "Home View";
 
@@ -19,11 +18,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   TabController _tabController;
 
-  List pages = [
-    PopularView(),
-    AuthorView(),
-    FavouriteView()
-  ];
+  List pages = [PopularView(), AuthorView(), FavouriteView()];
 
   @override
   void initState() {
@@ -90,7 +85,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           ),
           Tab(
             child: Text(
-              "Favourite",
+              "Favorites",
               style: TextStyle(
                 fontSize: _selectedTab == 2 ? 35 : 30,
                 fontWeight:
