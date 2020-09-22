@@ -85,7 +85,7 @@ class _SettingViewState extends State<SettingView> {
             settingOptions(() async {
               SharedPreferences preferences =
                   await SharedPreferences.getInstance();
-              preferences.setBool('seen', true);
+              preferences.setBool('seen', false);
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => SignInView()));
             }, "Sign Out", "logout.png"),
