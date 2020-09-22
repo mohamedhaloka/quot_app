@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/full_quote/view.dart';
+import 'package:quot_app/views/home/author/author_quotes/view.dart';
 import 'package:quot_app/views/home/view.dart';
 import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/views/setting/view.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         AboutView.id: (context) => AboutView(),
         FullQuoteView.id: (context) => FullQuoteView(),
         SettingView.id: (context) => SettingView(),
+        AuthorQuotes.id: (context) => AuthorQuotes(),
       },
       initialRoute: SignInView.id,
     );

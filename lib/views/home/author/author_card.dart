@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/models/authors.dart';
+import 'package:quot_app/views/home/author/author_quotes/view.dart';
 import 'package:share/share.dart';
 
 class AuthorCard extends StatelessWidget {
@@ -38,7 +39,10 @@ class AuthorCard extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, AuthorQuotes.id,
+                    arguments: authors);
+              },
               child: Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
