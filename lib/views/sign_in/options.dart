@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/views/home/view.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInOptions extends StatelessWidget {
   @override
@@ -16,7 +17,10 @@ class SignInOptions extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: kScandreyColor, width: 2)),
             child: RaisedButton(
-              onPressed: () {
+              onPressed: () async {
+                SharedPreferences preferences =
+                    await SharedPreferences.getInstance();
+                preferences.setBool('seen', true);
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => HomeView()));
               },
