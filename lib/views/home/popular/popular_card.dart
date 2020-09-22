@@ -18,8 +18,7 @@ class PopularCard extends StatefulWidget {
 }
 
 class _PopularCardState extends State<PopularCard> {
-  String quot =
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into";
+  String imgLike = "like.png";
 
   DbHelper dbHelper;
   @override
@@ -89,15 +88,19 @@ class _PopularCardState extends State<PopularCard> {
               children: [
                 Row(
                   children: [
-                    quoteOption("like.png", () async {
-                      var quots = Quot({
-                        'quot': widget.quotesInfo.quotes,
-                        'author': widget.quotesInfo.author
-                      });
-                      int id = await dbHelper.createQuote(quots);
-                      print("quote id is $id");
-                      Scaffold.of(context).showSnackBar(
-                          SnackBar(content: Text("Quot Add Successfuly")));
+                    quoteOption(imgLike, () async {
+                      if (imgLike == "like.png") {
+                        var quots = Quot({
+                          'quot': widget.quotesInfo.quotes,
+                          'author': widget.quotesInfo.author
+                        });
+                        int id = await dbHelper.createQuote(quots);
+                        print("quote id is $id");
+                        imgLike = "fulllike.png";
+                        setState(() {});
+                        Scaffold.of(context).showSnackBar(
+                            SnackBar(content: Text("Quot Add Successfuly")));
+                      } else {}
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {

@@ -37,7 +37,8 @@ class FullQuoteView extends StatelessWidget {
           FilledButton(
               tittle: "copy".toUpperCase(),
               onPress: () {
-                FlutterClipboard.copy("${quotes.quotes}").then((value) => print('copied'));
+                FlutterClipboard.copy("${quotes.quotes}")
+                    .then((value) => print('copied'));
                 Alert.toast(context, "You just copy quote");
               },
               buttonColor: kScandreyColor),
@@ -45,8 +46,7 @@ class FullQuoteView extends StatelessWidget {
           OutLineButton(
               tittle: "share".toUpperCase(),
               onPress: () {
-                Share.share(
-                    "${quotes.quotes}");
+                Share.share("${quotes.quotes}");
               },
               outLineColor: kScandreyColor)
         ],

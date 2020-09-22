@@ -43,29 +43,27 @@ class AuthorCard extends StatelessWidget {
                 Navigator.pushNamed(context, AuthorQuotes.id,
                     arguments: authors);
               },
-              child: Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: customHeight(context, 0.14),
-                      height: customHeight(context, 0.14),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage("${authors.img}"),
-                              fit: BoxFit.cover)),
-                    ),
-                    Text(
-                      "${authors.name}",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: kScandreyColor,
-                          fontFamily: "Playfair",
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: customHeight(context, 0.14),
+                    height: customHeight(context, 0.14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: NetworkImage("${authors.img}"),
+                            fit: BoxFit.cover)),
+                  ),
+                  Text(
+                    "${authors.name}",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: kScandreyColor,
+                        fontFamily: "Playfair",
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
             ),
             Align(
