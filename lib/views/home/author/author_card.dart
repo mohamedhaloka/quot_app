@@ -93,7 +93,7 @@ class AuthorCard extends StatelessWidget {
             Align(
               child: authorOption("share.png", () {
                 Share.share(
-                    "To see all quotes about ${authors.name} download Quot App via the link https://play.google.com/store/apps/details?id=com.quot_app");
+                    "To see all quotes about ${authors.name} download Quot App via the link https://play.google.com/store/apps/details?id=com.quot_app \n${authors.description}");
               }),
               alignment: Alignment.centerRight,
             )
