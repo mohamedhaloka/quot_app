@@ -3,6 +3,7 @@ import 'package:quot_app/const.dart';
 import 'package:quot_app/views/setting/Notification.dart';
 import 'package:quot_app/views/setting/about/view.dart';
 import 'package:quot_app/views/sign_in/view.dart';
+import 'package:quot_app/widgets_ui/custom_circular_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 import 'package:share/share.dart';
@@ -44,9 +45,11 @@ class _SettingViewState extends State<SettingView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                drawButton("left-arrow.png", () {
-                  Navigator.pop(context);
-                }),
+                CustomCircularButton(
+                    onPress: () {
+                      Navigator.pop(context);
+                    },
+                    imgSrc: "assets/img/full-quot/left-arrow.png"),
                 Text("")
               ],
             ),
@@ -79,7 +82,7 @@ class _SettingViewState extends State<SettingView> {
             }, "Share Application", "share.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() {
-              _sendEmail("mailto:mnhaloka@gmail.com");
+              _launchURL("mailto:mnhaloka@gmail.com");
             }, "Contact US", "contact.png"),
             CustomSizedBox(widNum: 0.0, heiNum: 0.04),
             settingOptions(() async {
@@ -153,32 +156,7 @@ class _SettingViewState extends State<SettingView> {
     );
   }
 
-  Widget drawButton(imgSrc, onPress) {
-    return GestureDetector(
-      onTap: onPress,
-      child: Container(
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            color: Color(0xffC2CCCC).withOpacity(0.4), shape: BoxShape.circle),
-        child: Center(
-          child: Image.asset(
-            "assets/img/full-quot/" + imgSrc,
-            width: 16,
-          ),
-        ),
-      ),
-    );
-  }
-
   _launchURL(url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  _sendEmail(url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {

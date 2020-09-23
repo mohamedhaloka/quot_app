@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
+import 'package:quot_app/widgets_ui/custom_circular_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
 import 'package:quot_app/widgets_ui/quot_logo.dart';
 
@@ -11,24 +12,10 @@ class AboutView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Color(0xffC2CCCC).withOpacity(0.4),
-                shape: BoxShape.circle),
-            child: Center(
-              child: Image.asset(
-                "assets/img/full-quot/left-arrow.png",
-                width: 16,
-              ),
-            ),
-          ),
-        ),
+        leading: Container(
+            margin: EdgeInsets.all(8),
+            child: CustomCircularButton(
+                onPress: () {}, imgSrc: "assets/img/full-quot/left-arrow.png")),
         centerTitle: false,
         title: Text(
           "About Quot".toUpperCase(),

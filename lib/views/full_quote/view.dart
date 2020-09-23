@@ -3,6 +3,7 @@ import 'package:easy_alert/easy_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:quot_app/const.dart';
 import 'package:quot_app/models/quotes.dart';
+import 'package:quot_app/widgets_ui/custom_circular_button.dart';
 import 'package:quot_app/widgets_ui/custom_filled_button.dart';
 import 'package:quot_app/widgets_ui/custom_outline_button.dart';
 import 'package:quot_app/widgets_ui/custom_sized_box.dart';
@@ -23,9 +24,11 @@ class FullQuoteView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              drawButton("left-arrow.png", () {
-                Navigator.pop(context);
-              }),
+              CustomCircularButton(
+                  onPress: () {
+                    Navigator.pop(context);
+                  },
+                  imgSrc: "assets/img/full-quot/left-arrow.png"),
               Text("")
             ],
           ),
