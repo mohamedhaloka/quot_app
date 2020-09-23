@@ -30,10 +30,27 @@ class AuthorCard extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                showDialog(context: context,child: AlertDialog(
-                  title: Text("${authors.name}"),
-                  content: Text("${authors.description}"),
-                ));
+                showDialog(
+                    context: context,
+                    child: CupertinoAlertDialog(
+                      title: Text(
+                        "${authors.name}",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      content: SingleChildScrollView(
+                          child: Text("${authors.description}")),
+                      actions: [
+                        FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            splashColor: kScandreyColor.withOpacity(0.2),
+                            child: Text(
+                              "ok".toUpperCase(),
+                              style: TextStyle(color: kScandreyColor),
+                            ))
+                      ],
+                    ));
               },
               child: Align(
                 alignment: Alignment.centerRight,
@@ -51,6 +68,7 @@ class AuthorCard extends StatelessWidget {
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: customHeight(context, 0.14),
@@ -64,7 +82,7 @@ class AuthorCard extends StatelessWidget {
                   Text(
                     "${authors.name}",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: kScandreyColor,
                         fontFamily: "Playfair",
                         fontWeight: FontWeight.bold),

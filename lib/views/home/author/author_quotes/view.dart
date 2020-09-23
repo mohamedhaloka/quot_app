@@ -7,7 +7,7 @@ import 'package:quot_app/models/authors.dart';
 import 'package:quot_app/models/quotes.dart';
 import 'package:quot_app/sevices/store.dart';
 import 'package:quot_app/views/home/author/author_quotes/author_quotes_app_bar.dart';
-import 'author_quotes_card.dart';
+import 'package:quot_app/views/home/popular/popular_card.dart';
 
 class AuthorQuotes extends StatefulWidget {
   static String id = "Author Quotes";
@@ -26,9 +26,9 @@ class _AuthorQuotesState extends State<AuthorQuotes> {
       for (var doc in data) {
         if (doc.data()[kAuthorName] == authorQuotes.name) {
           quotInfo.add(Quotes(
-              author: doc.data()[kAuthorName],
-              quotes: doc.data()[kQuotesDescription],));
-
+            author: doc.data()[kAuthorName],
+            quotes: doc.data()[kQuotesDescription],
+          ));
         }
         setState(() {
           isLoading = false;
@@ -64,8 +64,8 @@ class _AuthorQuotesState extends State<AuthorQuotes> {
                     duration: const Duration(milliseconds: 575),
                     child: SlideAnimation(
                       verticalOffset: 150.0,
-                      child: AuthorQuotesCard(
-                        quotes: quotInfo[index],
+                      child: PopularCard(
+                        quotesInfo: quotInfo[index],
                       ),
                     ),
                   );
