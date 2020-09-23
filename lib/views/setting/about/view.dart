@@ -47,7 +47,7 @@ class AboutView extends StatelessWidget {
               ),
               CustomSizedBox(widNum: 0.0, heiNum: 0.03),
               Text(
-                "About Quot Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "A QUOT App is a program that contains a huge number of quotations transmitted between people and knowing their real source, such as the name of the person who said it and some information about him. You can also search for the quote you want to know by keyword and you will find the quotes you are looking for, and not only this ! You can even contact us if an error occurs in the application or you want to suggest some modifications or additions .. Soon everyone will be allowed to add quotes .. Be in touch.\n\nQUOT App .. The QUOTES You Love.",
                 style: TextStyle(color: kScandreyColor, fontSize: 18),
               )
             ],

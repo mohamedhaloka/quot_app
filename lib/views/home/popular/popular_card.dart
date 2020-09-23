@@ -100,20 +100,20 @@ class _PopularCardState extends State<PopularCard> {
                         imgLike = "fulllike.png";
                         setState(() {});
                         Scaffold.of(context).showSnackBar(
-                            SnackBar(content: Text("Quot Add Successfuly")));
+                            SnackBar(content: Text("Quot Add Successfully")));
                       } else {}
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
                       Share.share(
-                          '${widget.quotesInfo.quotes} \n   -${widget.quotesInfo.author}');
+                          '${widget.quotesInfo.quotes} \n   - *${widget.quotesInfo.author}*');
                     }),
                   ],
                 ),
                 GestureDetector(
                   onTap: () {
                     FlutterClipboard.copy(
-                            '${widget.quotesInfo.quotes} \n   -${widget.quotesInfo.author}')
+                            '${widget.quotesInfo.quotes} \n   - *${widget.quotesInfo.author}*')
                         .then((value) => print('copied'));
                     Alert.toast(context, "You just copy quote");
                   },
