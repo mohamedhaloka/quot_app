@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomCircularButton extends StatelessWidget {
   CustomCircularButton(
       {@required this.onPress, @required this.imgSrc, this.iconSize});
