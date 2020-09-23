@@ -26,7 +26,7 @@ class DailyNotifications {
         'Without the quotes, we would not have known much',
         RepeatInterval.EveryMinute,
         platformChannelSpecifics);
-//       var scheduledNotificationDateTime =
+    // var scheduledNotificationDateTime =
     // DateTime.now().add(Duration(days: 2));
     // await flutterLocalNotificationsPlugin.schedule(
     // 0,
