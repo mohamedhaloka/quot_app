@@ -15,7 +15,10 @@ class AboutView extends StatelessWidget {
         leading: Container(
             margin: EdgeInsets.all(8),
             child: CustomCircularButton(
-                onPress: () {}, imgSrc: "assets/img/full-quot/left-arrow.png")),
+                onPress: () {
+                  Navigator.pop(context);
+                },
+                imgSrc: "assets/img/full-quot/left-arrow.png")),
         centerTitle: false,
         title: Text(
           "About Quot".toUpperCase(),
