@@ -105,13 +105,15 @@ class _PopularCardState extends State<PopularCard> {
                     }),
                     CustomSizedBox(widNum: 0.02, heiNum: 0.0),
                     quoteOption("share.png", () {
-                      Share.share('${widget.quotesInfo.quotes}');
+                      Share.share(
+                          '${widget.quotesInfo.quotes} \n   -${widget.quotesInfo.author}');
                     }),
                   ],
                 ),
                 GestureDetector(
                   onTap: () {
-                    FlutterClipboard.copy(widget.quotesInfo.quotes)
+                    FlutterClipboard.copy(
+                            '${widget.quotesInfo.quotes} \n   -${widget.quotesInfo.author}')
                         .then((value) => print('copied'));
                     Alert.toast(context, "You just copy quote");
                   },
